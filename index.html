@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkLog V3 Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">◈</span>
+        <div><h1>WorkLog V3</h1><p>AI-assisted productivity tracker · Portfolio build</p></div>
+      </div>
+      <div class="actions">
+        <button id="theme-btn" type="button">Toggle Theme</button>
+        <button id="export-btn" type="button">Export CSV</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="dashboard">
+        <article class="metric"><span id="total-hours">0</span><small>Total Hours</small></article>
+        <article class="metric"><span id="total-entries">0</span><small>Entries</small></article>
+        <article class="metric"><span id="top-project">None</span><small>Top Project</small></article>
+        <article class="metric"><span id="overtime-status">Normal</span><small>Weekly Status</small></article>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel">
+          <div class="panel-head"><h2>Entries</h2><button id="clear-btn" type="button">Clear</button></div>
+          <div id="entry-list" class="entry-list"><p class="empty">No entries yet.</p></div>
+        </aside>
+
+        <section class="chat-card">
+          <div id="chat-box" class="chat-box">
+            <div class="message assistant"><div class="meta">WorkLog AI</div><div class="bubble">Tell me your work hours. Examples:<br><code>I worked 6 hours on Monday for Website Project</code><br><code>Log 4.5 hours Tuesday for LLM App</code><br><code>Show my weekly summary</code></div></div>
+          </div>
+          <form id="input-form" class="input-row">
+            <input id="user-input" type="text" placeholder='e.g. "I worked 6 hours on Monday for LLM App"' autocomplete="off" />
+            <button id="send-btn" type="submit">Send</button>
+          </form>
+        </section>
+      </section>
+
+      <section class="reports">
+        <article class="report-card"><h2>Weekly Report</h2><div id="weekly-report">No report yet.</div></article>
+        <article class="report-card"><h2>Project Breakdown</h2><div id="project-report">No project data yet.</div></article>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
